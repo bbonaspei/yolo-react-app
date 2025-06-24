@@ -1,5 +1,7 @@
 h1 {
-    font-size: xxx-large;
+    margin: 0%;
+    margin-bottom: 12px;
+    font-size: xx-large;
     text-align: center;
 }
 
@@ -9,8 +11,8 @@ button {
     margin: auto;
     border-radius: 8px;
     color: #fffffe;
-    margin-top: 100px;
-    margin-bottom: 24px;
+    margin-top: 32px;
+    margin-bottom: 12px;
     width: 70%;
     padding: 12px;
     padding-left: 24px;
@@ -34,6 +36,7 @@ input {
     background-color: #272727;
     box-sizing: border-box;
     border-radius: 8px;
+    color: #fffffe;
 }
 
 input:focus {
@@ -54,5 +57,10 @@ input:focus {
 } 
 
 .input-group {
-    padding: 16px;
+    padding: 12px;
+}
+
+.error-msg {
+    padding: 12px;
+    color: rgb(255, 68, 68);
 }
