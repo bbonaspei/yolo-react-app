@@ -28,6 +28,7 @@ button:hover {
 }
 
 input {
+    font-family: "Outfit", sans-serif;
     width: 100%;
     margin-top: 12px;
     margin-bottom: 16px;

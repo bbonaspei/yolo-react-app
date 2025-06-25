@@ -1,8 +1,10 @@
 import './LoginContainer.css'
 import React, {useState, useEffect} from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const LoginContainer = () => {
+    const navigate = useNavigate();
+    
     const DEFAULT_USER = {
         username: 'testuser',
         password: 'password123',
@@ -64,6 +66,9 @@ const LoginContainer = () => {
             setSurname('');
             setUsername('');
             setPassword('');
+
+            navigate('/Home')
+
         } else {
             setError('Invalid username or password.');
         }
