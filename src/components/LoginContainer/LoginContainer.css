@@ -1,0 +1,79 @@
+h1 {
+    margin: 0%;
+    margin-bottom: 12px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+button {
+    font-size: 24px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    color: #fffffe;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    width: 70%;
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: none;
+    background-color: #dd631e;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #b33813;
+}
+
+input {
+    font-family: "Outfit", sans-serif;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    padding: 14px;
+    border: 2px solid transparent;
+    background-color: #272727;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #fffffe;
+}
+
+input:focus {
+    border: 2px solid;
+    outline: 0;
+    border-color: #575757;
+    caret-color: #fffffe;
+}
+
+input:is(:-webkit-autofill, :autofill) {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    padding: 14px;
+    border: 2px solid transparent;
+    background-color: #272727 !important;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #fffffe !important;
+    transition: background-color 9999s ease-out, color 9999s ease-out !important;
+}
+
+.login-container {
+    background-color: #191819;
+    border-radius: 24px;
+    padding: 24px;
+    width: 30%;
+    min-width: 300px;
+    max-width: 500px;
+} 
+
+.input-group {
+    padding: 12px;
+}
+
+.error-msg {
+    padding: 12px;
+    color: rgb(255, 68, 68);
+}
