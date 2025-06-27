@@ -8,7 +8,7 @@ Second project for internship.
 1. Clone the repository:
 Open your terminal or command prompt and run:
 ```
-git clone [<your-repository-url>](https://github.com/bbonaspei/yolo-react-app.git)
+git clone https://github.com/bbonaspei/yolo-react-app.git
 cd yolo-react-app
 ```
 
