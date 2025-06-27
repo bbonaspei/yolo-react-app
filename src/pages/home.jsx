@@ -1,7 +1,11 @@
-const Home = () => {
+const Home = ({user}) => {
     return (
         <div>
-            Welcome 
+            {user ? (
+                <>Welcome {user.name}</>
+            ) : (
+                <></>
+            )}
         </div>
     )
 }

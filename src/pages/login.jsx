@@ -1,8 +1,8 @@
 import LoginContainer from '../components/LoginContainer/LoginContainer.jsx'
 
-const Login = () => {
+const Login = ({onLoginSuccess}) => {
     return (
-        <LoginContainer></LoginContainer>
+        <LoginContainer onLoginSuccess={onLoginSuccess}></LoginContainer>
     )
 }
 

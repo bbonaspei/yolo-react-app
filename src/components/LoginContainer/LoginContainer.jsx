@@ -2,7 +2,7 @@ import './LoginContainer.css'
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const LoginContainer = () => {
+const LoginContainer = ({onLoginSuccess}) => {
     const navigate = useNavigate();
     
     const DEFAULT_USER = {
@@ -12,7 +12,6 @@ const LoginContainer = () => {
         surname: 'User',
     }
 
-    const [currentUser, setCurrentUser] = useState(null);
 
     const [registeredUsers, setRegisteredUsers] = useState(() => {
         try {
@@ -56,10 +55,10 @@ const LoginContainer = () => {
         );
 
         if (foundUser) {
-            setCurrentUser({
+            onLoginSuccess({
                 username: foundUser.username,
                 name: name,
-                surname: surname
+                surname: surname,
             });
 
             setName('');
