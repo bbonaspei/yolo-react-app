@@ -1,12 +1,30 @@
-# React + Vite
+# Forklift and Human Detection in React App
+Second project for internship.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prerequisites
+- Node.js
 
-Currently, two official plugins are available:
+## Installation 
+1. Clone the repository:
+Open your terminal or command prompt and run:
+```
+git clone [<your-repository-url>](https://github.com/bbonaspei/yolo-react-app.git)
+cd yolo-react-app
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Install dependencies:
+Once inside the project directory, install all the necessary packages:
+```
+npm install
+```
 
-## Expanding the ESLint configuration
+## Running the App
+After installation, you can start the development server:
+```
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Default Login Credentials
+Currently, this app includes a default user for demonstration purposes:
+- Username: testuser
+- Password: password123
