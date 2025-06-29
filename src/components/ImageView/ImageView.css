@@ -1,0 +1,9 @@
+.viewContainer {
+  margin-top: 2rem;
+}
+.image {
+  max-width: 300px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}

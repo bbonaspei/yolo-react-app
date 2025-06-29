@@ -1,0 +1,9 @@
+.uploadContainer {
+  margin-top: 1.5rem;
+}
+.preview {
+  margin-top: 1rem;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}

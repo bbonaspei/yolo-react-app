@@ -1,3 +1,4 @@
+import './ImageView.css'
 import React from 'react';
 
 function ImageView({imageUrl}){

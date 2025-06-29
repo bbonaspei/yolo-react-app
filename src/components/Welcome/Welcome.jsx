@@ -1,3 +1,4 @@
+import './Welcome.css'
 import React from 'react';
 
 function Welcome({user}){

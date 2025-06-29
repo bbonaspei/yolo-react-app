@@ -1,3 +1,4 @@
+import './ImageUpload.css'
 import React from 'react';
 
 function ImageUpload({onImageUpload}){
