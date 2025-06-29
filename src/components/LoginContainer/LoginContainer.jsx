@@ -1,34 +1,9 @@
 import './LoginContainer.css'
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const LoginContainer = ({onLoginSuccess}) => {
     const navigate = useNavigate();
-    
-    const DEFAULT_USER = {
-        username: 'testuser',
-        password: 'password123',
-        name: 'Default',
-        surname: 'User',
-    }
-
-
-    const [registeredUsers, setRegisteredUsers] = useState(() => {
-        try {
-            const storedUsers = localStorage.getItem('registeredUsers');
-            let initialUsers = storedUsers ? JSON.parse(storedUsers) : [];
-
-            if (!initialUsers.some(user => user.username === DEFAULT_USER.username)) {
-                initialUsers.push(DEFAULT_USER);
-            } else {
-                initialUsers = initialUsers.map(user => user.username === DEFAULT_USER.username ? { ...DEFAULT_USER } : user);
-            }
-            return initialUsers;
-        } catch (error) {
-            console.error("Failed to load:", error);
-            return [DEFAULT_USER];
-        }
-    });
 
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -37,37 +12,20 @@ const LoginContainer = ({onLoginSuccess}) => {
 
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        try {
-            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
-        } catch (error) {
-            console.error("Failed to save user to localStorage", error);
-            setError("Failed to save data. Please check browser storage settings.");
-        }
-    }, [registeredUsers]);
-
     const handleLogin = (e) => {
         e.preventDefault();
         setError('');
 
-        const foundUser = registeredUsers.find(
-            user => user.username === username && user.password === password
-        );
-
-        if (foundUser) {
-            onLoginSuccess({
-                username: foundUser.username,
-                name: name,
-                surname: surname,
-            });
+        if (username === 'testuser' && password === 'password123') {
+            onLoginSuccess(name, surname);
+            
+            navigate('/Home')
 
             setName('');
             setSurname('');
             setUsername('');
             setPassword('');
-
-            navigate('/Home')
-
+        
         } else {
             setError('Invalid username or password.');
         }
