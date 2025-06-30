@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoginContainer from './components/LoginContainer/LoginContainer'
@@ -7,33 +7,21 @@ import Home from './pages/home'
 
 
 function App() {
-    const [loggedInUser, setLoggedInUser] = useState(() => {
-        try {
-            const storedUser = localStorage.getItem('loggedInUser');
-            return storedUser ? JSON.parse(storedUser) : null;
-        } catch (error) {
-            console.error("Failed to load loggedInUser from localStorage:", error);
-            return null;
-        }
-    });
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loggedInName, setLoggedInName] = useState('');
+    const [loggedInSurname, setLoggedInSurname] = useState('');
 
-    useEffect(() => {
-        try {
-            if (loggedInUser) {
-                localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
-            } else {
-                localStorage.removeItem('loggedInUser');
-            }
-        } catch (error) {
-            console.error("Failed to save loggedInUser to localStorage:", error);
-        }
-    }, [loggedInUser]);
+    const handleLoginSuccess = (name, surname) => {
+        setIsLoggedIn(true);
+        setLoggedInName(name);
+        setLoggedInSurname(surname);
+  };
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Login onLoginSuccess={setLoggedInUser}></Login>}/>
-                <Route path="/Home" element={<Home user={loggedInUser}></Home>}/>
+                <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess}></Login>}/>
+                <Route path="/Home" element={<Home user={{name: loggedInName, surname: loggedInSurname}}></Home>}/>
             </Routes>
         </BrowserRouter>
     )
